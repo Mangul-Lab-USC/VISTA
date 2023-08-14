@@ -10,10 +10,6 @@ reader = vcf.Reader(input)
 reader_ref = vcf.Reader(gold)
 output = open(sys.argv[3], "a+")
 
-ref_50_100 = 0
-ref_100_500 = 0
-ref_500_1000 = 0
-ref_1000 = 0
 ref = 0
 
 for line in reader_ref:
