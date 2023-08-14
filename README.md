@@ -4,11 +4,16 @@ VISTA is an integrated SV calling framework that leverages results of individual
 
 ## Installation
 
-- `git clone https://github.com/Addicted-to-coding/VISTA/tree/main`
+`git clone https://github.com/Addicted-to-coding/VISTA/tree/main\n`
+
+## Prerequisites
+- python 3.8
+
+`pip install PyVCF\n` `pip install matplotlib`
 
 ## Usage
 
-- `python vista.py -i [MANTA VCF] [LUMPY VCF] [DELLY VCF] [GENOMESTRIP VCF] [CLEVER VCF] [POPDEL VCF] [OCTOPUS VCF] -s [mouse or human] -o [output folder]`
+`python vista.py -i [MANTA VCF] [LUMPY VCF] [DELLY VCF] [GENOMESTRIP VCF] [CLEVER VCF] [POPDEL VCF] [OCTOPUS VCF] -s [mouse or human] -o [output folder]`
 
 - Note: Input files' tool names should be all in lowercase
 
