@@ -4,12 +4,14 @@ VISTA is an integrated SV calling framework that leverages results of individual
 
 ## Installation
 
-`git clone https://github.com/Addicted-to-coding/VISTA/tree/main\n`
+`git clone https://github.com/Addicted-to-coding/VISTA/tree/main`
+`cd VISTA`
 
 ## Prerequisites
 - python 3.8
 
-`pip install PyVCF\n` `pip install matplotlib`
+`pip install PyVCF`
+`pip install matplotlib`
 
 ## Usage
 
