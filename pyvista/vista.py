@@ -1,5 +1,6 @@
 import argparse
 import subprocess
+import sys
 
 #AUTHOR: SEUNGMO LEE
 
@@ -55,19 +56,47 @@ def vista(args):
             raise ValueError("Missing Gold Standard or threshold number!")
         analyze_vcfs(args.gold, args.threshold, args.output)
         
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(
-        description="Run VISTA \n Command: python vista.py -i [MANTA VCF] [LUMPY VCF] [DELLY VCF] [GENOMESTRIP VCF] [CLEVER VCF] [POPDEL VCF] [OCTOPUS VCF] -s [mouse or human] -o [output folder]\n Note: Input files' tool names should be all in lowercase",
+        description="VISTA: An Integrated SV Discovery Framework",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    
-    parser.add_argument("-i", "--inputs", nargs="+", required=True, help="Input VCF files")
-    parser.add_argument("-s", "--sample", required=True, choices=["mouse", "human"], help="Sample type")
-    parser.add_argument("-o", "--output", required=True, help="Output folder path")
-    parser.add_argument("-g", "--gold", help="Input gold standard VCF")
-    parser.add_argument("-a", "--analysis", action="store_true", help="Include statistics analysis")
-    parser.add_argument("-t", "--threshold", help="Threshold for comparison")
+
+    parser.add_argument(
+        "-i", "--inputs", nargs="+", required=True,
+        help="Input VCF files to be merged"
+    )
+    parser.add_argument(
+        "-s", "--sample", required=True, choices=["mouse", "human"],
+        help="Specify the sample type, either 'mouse' or 'human'"
+    )
+    parser.add_argument(
+        "-o", "--output", required=True,
+        help="Output folder where VISTA will be saved"
+    )
+    parser.add_argument(
+        "-g", "--gold",
+        help="Provide the path to a single gold standard VCF file"
+    )
+    parser.add_argument(
+        "-a", "--analysis", action="store_true",
+        help="Include statistics analysis. If this flag is included, it reports statistics."
+    )
+    parser.add_argument(
+        "-t", "--threshold",
+        help="Threshold number for comparison"
+    )
+
+    parser.add_argument(
+        "--version", action="version", version="1.0.0"
+    )
+
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(1)
 
     args = parser.parse_args()
     vista(args)
-    
+
+if __name__ == "__main__":
+    main()
