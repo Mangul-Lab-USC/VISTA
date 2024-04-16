@@ -42,7 +42,7 @@ def vista(args):
         raise ValueError("At least 4 VCF files are required for -inputs.")
     
     if args.sample == "human":
-        vcf_names_to_filter = ["manta", "octopus", "delly", "genomestrip"]
+        vcf_names_to_filter = ["octopus", "manta", "delly", "genomestrip"]
         filtered_vcfs = filter_vcfs_by_name(args.inputs, vcf_names_to_filter)
     else:
         vcf_names_to_filter = ["lumpy", "manta", "clever", "popdel"]
