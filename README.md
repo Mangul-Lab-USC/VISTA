@@ -37,7 +37,7 @@ pip install matplotlib
 
 - `-o OUTPUT, --output`: Ouptut folder where VISTA will be saved
 
-- `-g GOLD, --gold`: Provide the path to a single gold standard VCF file
+- `-g GOLD, --gold`: Provide the path to gold standard VCF file
 
 - `-a, --analysis`: If this flag is included, it reports statistics
 
